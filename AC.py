@@ -54,10 +54,22 @@ def plotAc(ac):
 
     plt.show()
 
-
+def plotAcAnimated(ac):
+    lista = list()
+    plt.ylim(len(ac)-1)
+    for x in ac:
+        lista.append(x)
+        plt.imshow(lista, cmap='gray', interpolation='nearest')
+        plt.pause(0.00000001)
+    plt.pause(20)
 
 x = BinarizacionDeReglas(22)
 print(x)
-ac = AC([0,0,1,0,1,1,1,0,0,1,1,1,0,0,1,0,1,0,0,1],169,25)
-print(ac)
-plotAc(ac)
+regla = 169
+inicial = [0,0,1,0,1,1,1,0,0,1,1,1,0,0,1,0,1,0,0,1]
+inicial2 = [0,0,1,0,1,1,1,0,0,1,1,1,0,0,1,0,1,0,0,1,1,0,0,1,0,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,1,0,1,1,1,0,0,1,1,1,0,0,1,0,1,0,1,1,1,0,0,1,1,1,0,0,1,0,1,0,1,0,1]
+ac = AC(inicial2,regla,100)
+#plotAc(ac)
+print(len(ac))
+plotAcAnimated(ac)
+
