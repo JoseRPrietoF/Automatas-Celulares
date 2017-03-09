@@ -1,3 +1,3 @@
 # Automatas-Celulares
 
-requisitos: numpy, matplotlib
+requisitos:  matplotlib
